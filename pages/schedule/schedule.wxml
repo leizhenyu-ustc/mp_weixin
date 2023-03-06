@@ -1,0 +1,40 @@
+<!--pages/schedule/schedule.wxml-->
+<view>
+	<text>今日：{{datetime}}  {{weekdate}}</text>
+</view>
+
+<view class="tr bg-w">
+    <block>
+    <view class="th">预约部门</view>
+    <view class="th">预约人</view>
+    <view class="th">预约主题</view>
+    <view class="th">负责人</view>
+    </block>
+</view>
+<view wx:for="{{today2do}}" class="tb">
+  <block >
+      <view class="th" data-info="{{item._id}}" bindtap='jumpDetails'>{{item.depart}}</view>
+      <view class="th" data-info="{{item._id}}" bindtap='jumpDetails'>{{item.applyname}}</view>
+      <view class="th" data-info="{{item._id}}" bindtap='jumpDetails'>{{item.subject}}</view>
+      <view class="th" data-info="{{item._id}}" bindtap='jumpDetails'>{{item.subname}}</view>
+    </block>
+</view>
+
+<view>===============================</view>
+<view>待接单项目</view>
+<block wx:for="{{order2take}}">
+  <view>{{index+1}}  {{item.subject}} {{item.depart}} {{item.subname}}</view>
+  <view data-info="{{item._id}}" bindtap='jumpDetails'>详情</view>
+</block>
+<view>===============================</view>
+<view>待处理项目</view>
+<block wx:for="{{order2do}}">
+  <view>{{index+1}}  {{item.subject}} {{item.depart}} {{item.subname}}</view>
+  <view data-info="{{item._id}}" bindtap='jumpDetails'>详情</view>
+</block>
+<view>===============================</view>
+<view>已完成项目</view>
+<block wx:for="{{order2check}}">
+  <view>{{index+1}}  {{item.subject}} {{item.depart}} {{item.subname}}</view>
+  <view class="btn-area" data-info="{{item._id}}" bindtap='jumpDetails'>详情</view>
+</block>

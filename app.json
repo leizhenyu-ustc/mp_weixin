@@ -1,0 +1,31 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/schedule/schedule",
+        "pages/details/details"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#606",
+        "selectedColor": "green",
+        "backgroundColor": "#ffe",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "我要预约"
+            },
+            {
+                "pagePath": "pages/schedule/schedule",
+                "text": "预约日程"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

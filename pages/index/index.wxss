@@ -1,0 +1,32 @@
+.weui-tab__content_title{
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  flex-direction:row; 
+}
+.subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5c5a5a;
+  width: 200rpx;
+}
+.work_intro,.work_request{
+  padding-bottom: 20px;
+}
+.work_intro_item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.button{
+  display: flex;
+  font-size: 30px;
+  
+}
+.add{
+  color: red;
+}
+.minus{
+  color: blue;
+}

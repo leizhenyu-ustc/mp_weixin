@@ -1,0 +1,33 @@
+<view>
+	<view>预约时间：{{show.applytime}}</view>
+	<view>预约条目：{{show.entry}}</view>
+	<view>是否编辑：{{show.edit}}</view>
+	<view>预约部门：{{show.depart}}</view>
+	<view>接单人：{{show.subname}}</view>
+	<view hidden="{{!totakeflag}}">联系方式：{{show.Tel}}</view>
+	<view>主题：{{show.subject}}</view>
+	<view>备注：{{show.remark}}</view>
+	<view>===============================</view>
+	<view hidden="{{totakeflag}}">
+		<view>我要接单</view>
+		<wux-form id="wux-form">
+    		<wux-cell-group title="接单人">
+      			<wux-cell hover-class="none">
+        			<wux-field name="applyname">
+          				<wux-input label="姓名" />
+        			</wux-field>
+      			</wux-cell>
+    		</wux-cell-group>
+			<wux-cell-group title="联系方式">
+      			<wux-cell hover-class="none">
+        			<wux-field name="tel">
+          				<wux-input label="联系方式" />
+        			</wux-field>
+      			</wux-cell>
+    		</wux-cell-group>
+    		<view class="btn-area">
+      			<button bindtap="onSubmit">提交</button>
+    		</view>
+  		</wux-form>
+	</view>
+</view>

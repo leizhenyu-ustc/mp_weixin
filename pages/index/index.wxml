@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="weui-tab__content_title" >
+      <text>表单填写</text>
+  </view>
+  <wux-form id="wux-form" bind:change="onChange">
+    <wux-cell-group title="预约时间">
+      <wux-cell hover-class="none">
+        <wux-field name="applytime" initialValue="{{datetime}}">
+          <wux-input label="Date" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="预约条目">
+
+    <wux-radio-group name="entry" bind:change="onChange1">
+    <wux-radio color="royal" value="头条" title="头条"/>
+    <wux-radio color="royal" value="子条" title="子条"/>
+    </wux-radio-group>
+    <wux-radio-group name="edit" bind:change="onChange2">
+    是否需要编辑
+    <wux-radio color="royal" value="是" title="是"/>
+    <wux-radio color="royal" value="否" title="否"/>
+    </wux-radio-group>
+
+    </wux-cell-group>
+    <wux-cell-group title="预约部门">
+      <wux-cell hover-class="none">
+        <wux-field name="depart" initialValue="文体部">
+          <wux-input label="部门" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="预约人">
+      <wux-cell hover-class="none">
+        <wux-field name="applyname" initialValue="张三">
+          <wux-input label="姓名" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="主题">
+      <wux-cell hover-class="none">
+        <wux-field name="subject" initialValue="篮球赛">
+          <wux-input label="主题" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="备注">
+      <wux-cell hover-class="none">
+        <wux-field name="remark" initialValue="时间地点规模等">
+          <wux-input label="备注信息" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="身份验证码">
+      <wux-cell hover-class="none">
+        <wux-field name="checkcode" initialValue="******">
+          <wux-input label="验证码" />
+        </wux-field>
+      </wux-cell>
+    </wux-cell-group>
+    <view class="btn-area">
+      <button bindtap="onSubmit">提交</button>
+    </view>
+  </wux-form>
+</view>
+
