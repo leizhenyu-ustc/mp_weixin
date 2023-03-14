@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/schedule/schedule",
-        "pages/details/details"
+        "pages/details/details",
+        "pages/login/login"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -23,6 +24,10 @@
             {
                 "pagePath": "pages/schedule/schedule",
                 "text": "预约日程"
+            },
+            {
+                "pagePath": "pages/login/login",
+                "text": "登录"
             }
         ]
     },

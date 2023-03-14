@@ -8,11 +8,19 @@ var utildata = require('../../utils/util');
 console.log(utildata);
 var time = new Date();
 console.log(utildata.formatTime(time));
-
 import { $wuxForm } from '../../dist/index'
 
 Page({
   data:{
+    isShow:true,
+    items: [
+      {value: '头条' , checked:'true'},
+      {value: '子条'},
+    ],
+    items1: [
+      {value: '是'},
+      {value: '否',checked:true},
+    ],
     orderlist:[''],
     datetime: utildata.formatTime(time),
     entry:"",
@@ -42,13 +50,13 @@ Page({
       orderlist:orderlist
     })
   },
-  onLoad() {
-    
+  onLoad:function(options) {
+    isShow:(options.isShow == "true"?true:false)
   },
   addList: function(){
     var  lists = this.data.lists;
     var newData = {};
-    lists.push(newData);//实质是添加lists数组内容，使for循环多一次
+    lists.push(newData); //实质是添加lists数组内容，使for循环多一次
     this.setData({
       lists: lists,
     })  
@@ -67,8 +75,11 @@ Page({
   onChange1(e) {
     this.data.entry=e.detail.value
   },
-  onChange2(e) {
-    this.data.edit=e.detail.value
+  onChange2:function() {
+    var that = this
+    that.setData({
+      isShow:(!that.data.isShow)
+    })
   },
   onSubmit() {
     /**
@@ -77,7 +88,7 @@ Page({
     **/
     const { getFieldsValue, getFieldValue, setFieldsValue } = $wuxForm()
     const value = getFieldsValue()
-    if(this.data.entry==""){
+    if(this.data.entry == null){
       wx.showToast({
         title: '请选择预约条目',
         icon: 'error',
@@ -85,7 +96,7 @@ Page({
       })
       return
     }
-    if(this.data.edit==""){
+    if(this.data.edit == null){
       wx.showToast({
         title: '是否需要编辑',
         icon: 'error',

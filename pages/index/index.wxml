@@ -10,19 +10,31 @@
         </wux-field>
       </wux-cell>
     </wux-cell-group>
-    <wux-cell-group title="预约条目">
+    <wux-cell-group title="预约条目"></wux-cell-group>
 
-    <wux-radio-group name="entry" bind:change="onChange1">
+    <!-- <wux-radio-group name="entry" bind:change="onChange1">
     <wux-radio color="royal" value="头条" title="头条"/>
     <wux-radio color="royal" value="子条" title="子条"/>
-    </wux-radio-group>
-    <wux-radio-group name="edit" bind:change="onChange2">
-    是否需要编辑
-    <wux-radio color="royal" value="是" title="是"/>
-    <wux-radio color="royal" value="否" title="否"/>
-    </wux-radio-group>
+    </wux-radio-group> -->
+    <radio-group class="radio-group" bindchange="onChange1">
+      <label name="entry" class="radio" wx:for="{{items}}">
+        <radio value="{{item.value}}" checked="{{item.checked}}" />
+    {{item.value}}
+      </label>
+    </radio-group>
+    <wux-cell-group title="是否编辑"></wux-cell-group>
+    <radio-group name="edit" class="radio-group" bindchange="onChange2">
+      <label class="radio">
+        <radio value="yes" value="true" checked="{{isShow}}" />是
+      <radio value="no" value="false"/>否
+      </label>
+    </radio-group>
+    <view wx:if="{{isShow}}">
+      <view>
+        <textarea class="input" name="remark" placeholder="请输入编辑内容"></textarea>
+      </view>
+    </view>
 
-    </wux-cell-group>
     <wux-cell-group title="预约部门">
       <wux-cell hover-class="none">
         <wux-field name="depart" initialValue="文体部">
